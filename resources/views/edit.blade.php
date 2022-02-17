@@ -5,7 +5,7 @@
     color: white;
     padding: 5px 40px;
   }
-  tr:nth-child(odd) td{
+  th:nth-child(odd) td{
     background-color: #FFFFFF;
   }
   td {
@@ -23,6 +23,15 @@
 @section('title', 'edit.blade.php')
 
 @section('content')
+@if (count($errors) >0)
+<ul>
+  @foreach ($errors->all() as $error)
+  <li>
+    {{$error}}
+  </li>
+  @endforeach
+</ul>
+@endif
 <form action="/edit" method="POST">
   <table>
     @csrf
@@ -59,10 +68,10 @@
       </td>
     </tr>
     <tr>
-      <th></th>
-      <td>
-        <button>送信</button>
-      </td>
+    <th></th>
+    <td>
+      <button>送信</button>
+    </td>
     </tr>
   </table>
 </form>
