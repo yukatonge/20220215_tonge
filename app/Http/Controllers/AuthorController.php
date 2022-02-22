@@ -10,7 +10,7 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
+        $user = Author::user();
         $items = Author::paginate(4);
         $param = ['items' => $items, 'user' =>$user];
         return view('index', $param);

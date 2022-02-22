@@ -35,5 +35,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/auth', [AuthorController::class,'check']);
-Route::post('/auth', [AuthorController::class,'checkUser']);
+Route::get('/auth', [AuthorController::class, 'check']);
+Route::post('/auth', [AuthorController::class, 'checkUser']);
